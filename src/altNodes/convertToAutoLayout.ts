@@ -1,4 +1,4 @@
-import { mostFrequent } from "./../swiftui/swiftuiMain";
+import { mostFrequent } from "./mostFrequent";
 import { AltFrameNode, AltGroupNode, AltSceneNode } from "./altMixins";
 import { convertGroupToFrame } from "./convertGroupToFrame";
 

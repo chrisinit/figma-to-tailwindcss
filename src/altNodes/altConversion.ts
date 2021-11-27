@@ -288,7 +288,7 @@ const convertFrame = (altNode: AltFrameMixin, node: DefaultFrameMixin) => {
   altNode.counterAxisSizingMode = node.counterAxisSizingMode;
 
   // Fix this: https://stackoverflow.com/questions/57859754/flexbox-space-between-but-center-if-one-element
-  // It affects HTML, Tailwind, Flutter and possibly SwiftUI. So, let's be consistent.
+  // It affects HTML, Tailwind, Flutter. So, let's be consistent.
   if (
     node.primaryAxisAlignItems === "SPACE_BETWEEN" &&
     node.children.length === 1

@@ -1,8 +1,4 @@
 import {
-  swiftuiColor,
-  swiftuiGradient,
-} from "./../../swiftui/builderImpl/swiftuiColor";
-import {
   tailwindColors,
   tailwindGradient,
   tailwindNearestColor,
@@ -121,8 +117,6 @@ const convertSolidColor = (
               contrastBlack: 0,
               contrastWhite: 0,
             };
-          } else if (framework === "swiftui") {
-            exported = swiftuiColor(fill.color, opacity);
           }
 
           return {
@@ -204,9 +198,6 @@ const convertGradient = (
               break;
             case "tailwind":
               exported = tailwindGradient(fill);
-              break;
-            case "swiftui":
-              exported = swiftuiGradient(fill);
               break;
           }
 

@@ -107,26 +107,6 @@ describe("Retrieve Colors for UI", () => {
         hex: "ffffff",
       },
     ]);
-
-    expect(retrieveGenericSolidUIColors([child0], "swiftui")).toEqual([
-      {
-        colorName: "",
-        contrastBlack: 0,
-        contrastWhite: 0,
-        exported: "Color.black",
-        hex: "000000",
-      },
-      {
-        colorName: "",
-        contrastBlack: 0,
-        contrastWhite: 0,
-        exported: "Color.white",
-        hex: "ffffff",
-      },
-    ]);
-
-    // Wrong
-    expect(retrieveGenericLinearGradients([child0], "swiftui")).toEqual([]);
   });
 
   it("Linear Gradients", () => {
@@ -173,16 +153,5 @@ describe("Retrieve Colors for UI", () => {
           "LinearGradient(begin: Alignment.centerLeft, end: Alignment.centerRight, colors: [Colors.black], )",
       },
     ]);
-
-    expect(retrieveGenericLinearGradients([child0], "swiftui")).toEqual([
-      {
-        css: "linear-gradient(90deg, black)",
-        exported:
-          "LinearGradient(gradient: Gradient(colors: [Color.black]), startPoint: .leading, endPoint: .trailing)",
-      },
-    ]);
-
-    // Wrong
-    expect(retrieveGenericSolidUIColors([child0], "swiftui")).toEqual([]);
   });
 });

@@ -2,6 +2,7 @@
 dist
 .next
 out/
+public/
 
 # dependencies
 node_modules

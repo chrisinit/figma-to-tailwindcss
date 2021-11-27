@@ -25,7 +25,6 @@
   var switchValue;
   import ScreenTailwind from "./ScreenTailwind.svelte";
   import ScreenFlutter from "./ScreenFlutter.svelte";
-  import ScreenSwiftUI from "./ScreenSwiftUI.svelte";
   import ScreenHTML from "./ScreenHtml.svelte";
   import ScreenAbout from "./ScreenAbout.svelte";
 
@@ -43,7 +42,6 @@
   <TabList>
     <Tab>Tailwind 2</Tab>
     <Tab>Flutter</Tab>
-    <Tab>SwiftUI</Tab>
     <Tab>HTML</Tab>
     <Tab>About</Tab>
   </TabList>
@@ -54,10 +52,6 @@
 
   <TabPanel>
     <ScreenFlutter on:clipboard={updateClipboard} />
-  </TabPanel>
-
-  <TabPanel>
-    <ScreenSwiftUI on:clipboard={updateClipboard} />
   </TabPanel>
 
   <TabPanel>

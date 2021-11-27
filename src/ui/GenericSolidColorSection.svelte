@@ -45,7 +45,7 @@
       </div>
 
       {#each colorsObservable as item}
-        {#if type === 'html' || type === 'swiftui'}
+        {#if type === 'html'}
           <div class="w-1/3 p-1">
             <SimpleItemColor {...item} on:clipboard={clipboard(item.exported)} />
           </div>

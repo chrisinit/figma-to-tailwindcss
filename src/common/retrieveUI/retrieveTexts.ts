@@ -1,4 +1,3 @@
-import { swiftuiMain } from "./../../swiftui/swiftuiMain";
 import { tailwindMain } from "./../../tailwind/tailwindMain";
 import { htmlBuilder, htmlMain } from "./../../html/htmlMain";
 import { flutterMain } from "./../../flutter/flutterMain";
@@ -6,7 +5,7 @@ import { AltSceneNode } from "../../altNodes/altMixins";
 import { retrieveTopFill } from "../retrieveFill";
 import { calculateContrastRatio, deepFlatten } from "./commonUI";
 
-type exportFramework = "flutter" | "swiftui" | "html" | "tailwind";
+type exportFramework = "flutter" | "html" | "tailwind";
 
 export const retrieveGenericUIText = (
   sceneNode: Array<AltSceneNode>,
@@ -26,8 +25,6 @@ export const retrieveGenericUIText = (
         code = htmlMain([node]);
       } else if (framework === "tailwind") {
         code = tailwindMain([node]);
-      } else if (framework === "swiftui") {
-        code = swiftuiMain([node]);
       }
 
       let style;

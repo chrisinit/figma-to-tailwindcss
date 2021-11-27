@@ -4,7 +4,6 @@ import {
   retrieveGenericSolidUIColors,
 } from "./common/retrieveUI/retrieveColors";
 import { htmlMain } from "./html/htmlMain";
-import { swiftuiMain } from "./swiftui/swiftuiMain";
 import { tailwindMain } from "./tailwind/tailwindMain";
 import { flutterMain } from "./flutter/flutterMain";
 import { convertIntoAltNodes } from "./altNodes/altConversion";
@@ -14,7 +13,7 @@ let isJsx = false;
 let layerName = false;
 let material = true;
 
-let mode: "flutter" | "swiftui" | "html" | "tailwind";
+let mode: "flutter" | "html" | "tailwind";
 
 figma.showUI(__html__, { width: 450, height: 550 });
 
@@ -44,8 +43,6 @@ const run = () => {
     result = flutterMain(convertedSelection, parentId, material);
   } else if (mode === "tailwind") {
     result = tailwindMain(convertedSelection, parentId, isJsx, layerName);
-  } else if (mode === "swiftui") {
-    result = swiftuiMain(convertedSelection, parentId);
   } else if (mode === "html") {
     result = htmlMain(convertedSelection, parentId, isJsx, layerName);
   }
@@ -60,8 +57,7 @@ const run = () => {
   if (
     mode === "tailwind" ||
     mode === "flutter" ||
-    mode === "html" ||
-    mode === "swiftui"
+    mode === "html"
   ) {
     figma.ui.postMessage({
       type: "colors",
@@ -91,7 +87,6 @@ figma.ui.onmessage = (msg) => {
   if (
     msg.type === "tailwind" ||
     msg.type === "flutter" ||
-    msg.type === "swiftui" ||
     msg.type === "html"
   ) {
     mode = msg.type;
